@@ -107,6 +107,9 @@ int usb_find_device(unsigned idx, char *addr, unsigned addr_size, void **device,
 	size_t i;
 	int res;
 
+	libusb_exit(NULL);
+	libusb_init(NULL);
+
 	if (!initialized) {
 		PRINT_INFO(stderr,
 			   "Library has not been initialized when loaded\n");
